@@ -14,7 +14,7 @@ PATH_TO_JSON_FILE = os.path.join(PATH_TO_FILE, 'user_settings.json')
 stock_currency_dict = dict()
 
 
-def get_currency_rate():
+def get_currency_rate() -> dict:
     """Функция возвращает курс доллара и евро"""
     url_1 = "https://api.apilayer.com/exchangerates_data/convert?to=RUB&from=EUR&amount=1"
     url_2 = "https://api.apilayer.com/exchangerates_data/convert?to=RUB&from=USD&amount=1"
@@ -36,7 +36,7 @@ def get_currency_rate():
     return result
 
 
-def get_stocks_rate():
+def get_stocks_rate() -> list[dict]:
     """Функция возвращает курс акций S&P500"""
     api_url_aapl = 'https://api.api-ninjas.com/v1/stockprice?ticker={}'.format('AAPL')
     response_aapl = requests.get(api_url_aapl, headers={'X-Api-Key': API_KEY_STOCKS})
