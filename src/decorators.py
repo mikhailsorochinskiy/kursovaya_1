@@ -2,6 +2,7 @@ from functools import wraps
 
 
 def decorator(func):
+    """Декоратор записывает результат в файл"""
     @wraps(func)
     def wrapper(*args, **kwargs):
         try:
